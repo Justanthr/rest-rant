@@ -5,12 +5,15 @@ function show (data) {
     return (
         <Def>
           <main>
-            <h1>{data.place.name}</h1>
             <section className='show-sec'>
             <img className='show-img' src={data.place.pic} alt={data.place.name} />
+            <h1>{data.place.name}</h1>
+            <h3>Located in {data.place.city}, {data.place.state}</h3>
             <div className='show-ratedisc'>
               <div className='show-rate'>Rating</div>
               <div className='show-disc'>Discription</div>
+              <div>{data.place.showEstablished()}</div>
+              <div>{data.place.cuisines}</div>
             </div>
             </section>
             <div className='show-com'>Comments</div>
