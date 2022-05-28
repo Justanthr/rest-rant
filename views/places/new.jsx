@@ -8,6 +8,15 @@ function new_form (data) {
             <h4 className='alert-danger'>{data.message}</h4>
         )
     }
+    let sumRatings = data.place.comments.reduce((tot, c) => {
+        return tot + c.stars
+      }, 0)
+      let averageRating = sumRatings / data.place.comments.length
+      rating = (
+        <h3>
+        {Math.round(averageRating)} stars
+        </h3>
+      )      
     return (
         <Def>
               <main>
